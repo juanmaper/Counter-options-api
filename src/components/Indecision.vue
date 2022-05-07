@@ -10,7 +10,7 @@
     placeholder="Hazme una pregunta">
     <p>Recuerda terminar con un signo de interrogación (?)</p>
 
-    <div>
+    <div v-if="isValidQuestion">
       <h2> {{ question }} </h2>
       <h1> {{ answer }} </h1>
 
@@ -26,16 +26,23 @@ export default {
     return {
       question: null,
       answer: null,
-      img: null
+      img: null,
+      isValidQuestion: false
     }
   },
+
   watch: {
     question(value, oldValue) {
+      this.isValidQuestion = false
+
       if ( !value.includes("?") ) return
+
+      this.isValidQuestion = true
 
       this.getAnswer()
     }
   },
+
   methods: {
     async getAnswer() {
       
@@ -43,7 +50,7 @@ export default {
       
       const { answer, image } = await fetch("https://yesno.wtf/api").then( r => r.json() )
 
-      this.answer = answer
+      this.answer = answer  === "yes" ? "Sí" : "No" 
       this.img = image
     }
   }
