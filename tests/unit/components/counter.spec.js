@@ -9,15 +9,15 @@ describe('Counter Component', () => {
     wrapper = shallowMount( Counter )
   })
 
-  // test('debe de hacer match con el snapshot', () => {
+  // test('should match snapshot', () => {
 
   //   const wrapper = shallowMount( Counter )
 
   //   expect( wrapper.html() ).toMatchSnapshot()
   // })
 
-
-  test('h2 debe de tener valor por defecto "Counter"', () => {
+  
+  test('h2 should have default value "Counter"', () => {
 
     expect( wrapper.find('h2').exists() ).toBeTruthy()
 
@@ -26,14 +26,14 @@ describe('Counter Component', () => {
     expect( h2Value ).toBe('Counter')
   })
 
-  test('el valor por defecto debe ser 100 en el p', () => {
+  test('default value must be 100 in p tag', () => {
 
     const value = wrapper.find( '[data-testid="counter"]' ).text()
 
     expect( value ).toBe("100")
   })
 
-  test('debe de incrementar y decrementar el contador', async() => {
+  test('should increase and decrease counter', async() => {
 
     const [ increaseBtn, decreaseBtn ] = wrapper.findAll('button')
 
@@ -51,7 +51,7 @@ describe('Counter Component', () => {
 
   })
 
-  test('debe de establecer el valor por defecto', () => {
+  test('should establish default value', () => {
     
     const { start } = wrapper.props()
 
@@ -61,7 +61,7 @@ describe('Counter Component', () => {
 
   })
 
-  test('debe de mostrar la prop title', () => {
+  test('should show prop title', () => {
 
     const title = "Hello World!!!!!"
 
@@ -71,7 +71,7 @@ describe('Counter Component', () => {
       }
     })
 
-   expect( wrapper.find('h2').text() ).toBe( title )
+   expect( wrapper.find( 'h2' ).text() ).toBe( title )
 
   })
 
