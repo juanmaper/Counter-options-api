@@ -2,6 +2,11 @@
 
 A counter made in Vue.js using Options API. 
 
+Use of:
+- Computed properties
+- Props
+- Validations
+
 ## Project setup
 ```
 yarn install
