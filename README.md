@@ -1,4 +1,6 @@
-# 03-fundamentos
+# Counter
+
+A counter made in Vue.js using Options API. 
 
 ## Project setup
 ```
