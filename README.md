@@ -1,4 +1,4 @@
-# Counter
+# Counter - Options API
 
 A counter made in Vue.js using Options API. 
 
